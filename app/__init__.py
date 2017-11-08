@@ -19,7 +19,7 @@ def create_app():
     db.init_app(app)
 
     # register blueprints
-    from app.user_interface.views import user_interface_blueprint
-    app.register_blueprint(user_interface_blueprint)
+    from app.log_parser.views import log_parser_blueprint
+    app.register_blueprint(log_parser_blueprint)
 
     return app

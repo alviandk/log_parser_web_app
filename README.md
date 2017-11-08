@@ -18,6 +18,7 @@ on your computer:
 - docker ([docker-installation])
 - docker-machine ([docker-machine-instalation])
 - docker-compose ([docker-compose-instalation])
+- virtualbox ([virtualbox-download])
 
 
 ## Installation
@@ -65,3 +66,4 @@ _For more examples and usage, please refer to the [Wiki][wiki]._
 [docker-installation]: https://docs.docker.com/engine/installation/
 [docker-machine-instalation]: https://docs.docker.com/machine/install-machine/
 [docker-compose-instalation]: https://docs.docker.com/compose/install/
+[virtualbox-download]: https://www.virtualbox.org/wiki/Downloads

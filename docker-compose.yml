@@ -8,8 +8,8 @@ services:
     ports:
         - 5435:5432  # expose ports - HOST:CONTAINER
     environment:
-      - POSTGRES_USER=postgres # to be override
-      - POSTGRES_PASSWORD=postgres # to be override
+      - POSTGRES_USER=postgres # override on it prod!
+      - POSTGRES_PASSWORD=postgres # override on it prod!
     healthcheck:
       test: exit 0
 
@@ -19,8 +19,9 @@ services:
     ports:
       - 5001:5000 # expose ports - HOST:CONTAINER
     environment:
-      - APP_SETTINGS=app.config.DevelopmentConfig # to be override
-      - DATABASE_URL=postgres://postgres:postgres@app-db:5432/app_dev # to be override
+      - SECRET_KEY=my_precious # override it on prod!
+      - APP_SETTINGS=app.config.DevelopmentConfig # override it on prod!
+      - DATABASE_URL=postgres://postgres:postgres@app-db:5432/app_dev # override it on prod!
       - DATABASE_TEST_URL=postgres://postgres:postgres@app-db:5432/app_test
     depends_on:
       app-db:
