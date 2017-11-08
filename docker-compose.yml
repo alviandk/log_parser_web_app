@@ -16,8 +16,6 @@ services:
   log-parser:
     container_name: log-parser
     build: ./
-    volumes:
-      - '.:/usr/src/app'
     ports:
       - 5001:5000 # expose ports - HOST:CONTAINER
     environment:
