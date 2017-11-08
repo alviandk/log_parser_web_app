@@ -25,7 +25,7 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@app-db:5432/app_dev # to be override
       - DATABASE_TEST_URL=postgres://postgres:postgres@app-db:5432/app_test
     depends_on:
-      users-db:
+      app-db:
         condition: service_healthy
     links:
       - app-db

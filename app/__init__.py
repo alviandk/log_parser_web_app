@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # instantiate the db
@@ -19,7 +19,7 @@ def create_app():
     db.init_app(app)
 
     # register blueprints
-    from project.api.views import users_blueprint
-    app.register_blueprint(users_blueprint)
+    from app.user_interface.views import user_interface_blueprint
+    app.register_blueprint(user_interface_blueprint)
 
     return app
