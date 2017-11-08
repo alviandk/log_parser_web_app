@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Log Parser Web App</title>
-    <!-- meta -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- styles -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    {% block css %}{% endblock %}
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <br>
-          <h1>All Unique Ip Address</h1>
-          <hr><br>
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <br>
+    <h1>All Unique Ip Address</h1>
+    <hr><br>
 
-          <br>
-          <hr>
-          <div>
+    <br>
+    <hr>
+    <div>
 
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"></script>
-    {% block js %}{% endblock %}
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
