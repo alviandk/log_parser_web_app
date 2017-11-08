@@ -30,7 +30,7 @@ docker-machine create -d virtualbox flask-dev
 ```
 - check the installed docker machine:
 ```sh
-eval "$(docker-machine env dev)"
+eval "$(docker-machine env flask-dev)"
 ```
 - build the app with docker-compose:
 ```sh
@@ -43,13 +43,13 @@ docker-compose up -d
 (The -d flag is used to run the containers in the background)
 - get the ip of docker-machine:
 ```sh
-docker-machine ip dev
+docker-machine ip flask-dev
 ```
 - visit the ip on the browser with addition port number :5001 (http://ip-of-docker-machine:5001)
 
 ## Development Guide
 - When you restart the computer you need to make sure that the docker-machine is running up.
-To check it use command: `docker-machine ls`. Check if flask-dev state is running.
+To check it, use command: `docker-machine ls`. Check if flask-dev state is running.
 - If it's not running, run the command `docker-machine start flask-dev`
 - When you make a change on the code, you need to rebuild with command: 
 `docker-compose up -d --build`.
