@@ -3,3 +3,4 @@ Flask-SQLAlchemy==2.2
 psycopg2==2.7.1
 Flask-Testing==0.6.2
 Flask-Script==2.0.5
+Flask-Migrate==2.1.1

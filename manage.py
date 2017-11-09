@@ -1,11 +1,15 @@
 import unittest
+
+from flask_migrate import MigrateCommand
 from flask_script import Manager
 
 from app import create_app, db
-# from app.api.models import User
+from app.log_parser.models import *
 
 app = create_app()
 manager = Manager(app)
+
+manager.add_command('db', MigrateCommand)
 
 
 @manager.command

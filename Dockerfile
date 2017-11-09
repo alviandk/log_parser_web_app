@@ -13,6 +13,10 @@ RUN pip install -r requirements.txt
 # add app
 ADD . /usr/src/app
 
+# db migration
+CMD python manage.py db migrate
+CMD python manage.py db upgrade
+
 # run server
 CMD python manage.py runserver -h 0.0.0.0
 

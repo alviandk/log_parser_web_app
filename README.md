@@ -55,6 +55,8 @@ To check it, use command: `docker-machine ls`. Check if flask-dev state is runni
 - When you make a change on the code, you need to rebuild with command: 
 `docker-compose up -d --build`.
 - get the ip of docker-machine (see the last two points of installation guide) and visit.
+
+# TO DO: Db and virtenv installation
    
 ## User Guide
 
