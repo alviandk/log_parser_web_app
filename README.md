@@ -61,21 +61,21 @@ To check it, use command: `docker-machine ls`. Check if flask-dev state is runni
 Home menu is consisting 3 main menu, List of All unique IP Addresses, List of All Entries and 
 Upload Log File Entry.
 
-![](home.png)
+![](img/home.png)
 
 On List of All unique IP Addresses menu, there are list of unique client ip address, country of ip address, and
 number of hits of the ip address. You can check all entry filtered by ip, just click the link below
 the ip.
-![](list ip.png)
+![](img/list_ip.png)
 
 On List of All Entries menu, there are activity on raw logs, analyze result of attack type which are 
 sqli (sql injection), rfi(remote file inclusion), and web shell attack. You can filter the entry by
 clicking on the link or search by ip address on search bar with autocomplete.
-![](list entry.png)
+![](img/list_entry.png)
 
 On Upload Log File Entry menu, you can uploading log file to make an addition to the database.
 P.S please don't upload to big file for now (<20mb).
-![](upload log.png)
+![](img/upload_log.png)
 
 [docker-installation]: https://docs.docker.com/engine/installation/
 [docker-machine-instalation]: https://docs.docker.com/machine/install-machine/
