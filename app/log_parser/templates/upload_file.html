@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <br>
+    <h1>Upload File</h1>
+
+
+
+    <hr>
+      <a href="{{ url_for ('log_parser.index') }}">Back to Main Page</a><br><br><br>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+                <li>
+                    Go to: <a href="{{ url_for('log_parser.get_ip_address') }}">
+                     List of All unique IP Addresses
+                    </a>
+                </li>
+                <li>
+                    Go to: <a href="{{ url_for('log_parser.get_entry') }}">
+                     List of All Entries
+                    </a>
+                </li>
+            </ul>
+        {% endif %}
+      {% endwith %}
+
+    <form method="POST" enctype=multipart/form-data>
+        <label>Upload a log file:</label>
+        <input type="file" name="file">
+        <input type="submit" value="submit">
+    </form>
+
+    <br>
+    <hr>
+    <div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

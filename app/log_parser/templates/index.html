@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-12">
     <br>
-    <h1>All Unique Ip Address</h1>
-    <hr><br>
+    <h1>Welcome to Log Parser App</h1>
+    <hr>
+    <h4>Menu:</h4>
+    <ul>
+      <li>
+        <a href="{{ url_for('log_parser.get_ip_address') }}">
+          List of All unique IP Addresses
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('log_parser.get_entry') }}">
+          List of All Entries
+        </a>
+      </li>
+      <li>
+        <a href="{{ url_for('log_parser.upload_log_file') }}">
+          Upload Log File Entry
+        </a>
+      </li>
+    </ul>
+
 
     <br>
     <hr>

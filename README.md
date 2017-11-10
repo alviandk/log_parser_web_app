@@ -1,5 +1,5 @@
 # Log Parser Web App
-> Log Parser with python running on Flask.
+> Server log parser with python, running on Flask.
 
 The flask app which parses the log and shows information about SQLi, 
 remote file inclusion and web shells attacks.
@@ -11,7 +11,7 @@ Some Features Including:
 - detect remote file inclusion with found entries
 - detect web shells with found entries
 
-## Development setup
+## Docker Setup
 
 To running up this app with docker, you need list of these to be installed
 on your computer:
@@ -21,7 +21,7 @@ on your computer:
 - virtualbox ([virtualbox-download])
 
 
-## Installation
+## App Installation with Docker
 Installation process:
 - clone this repo
 - from terminal, change to this root app folder

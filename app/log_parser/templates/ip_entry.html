@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <br>
+    <h1>IP {{ ip_address }} Entries</h1>
+    <hr>
+      <a href="{{ url_for ('log_parser.index') }}">Back to Main Page</a><br>
+    <h4>IP Detail</h4>
+    <p>
+      Address: {{ ip_address.address }}<br>
+      Country: {{ ip_address.country.name }}<br>
+      Total hits: {{ ip_address.hits }}<br>
+      Created at: {{ ip_address.created_at.strftime('%d %B %Y %H:%M:%S') }}<br>
+    </p>
+    <br>
+    <div>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>IP Address</th>
+            <th>sqli</th>
+            <th>shell</th>
+            <th>rfi</th>
+            <th>Raw Log</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for entry in ip_address.entries %}
+          <tr>
+            <td>{{ entry.ip_address.address }}</td>
+             <td>{{ entry.is_sqli }}</td>
+             <td>{{ entry.is_rfi }}</td>
+             <td>{{ entry.is_web_shell }}</td>
+            <td>{{ entry.raw_log }}</td>
+          </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

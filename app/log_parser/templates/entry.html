@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <br>
+    <h1>All Entry</h1>
+    <hr><br>
+    <a href="{{ url_for ('log_parser.index') }}">Back to Main Page</a><br>
+    <div class="ui-widget">
+      <label for="filter_ip">Filter entry by Ip Address (Autocomplete): </label>
+      <input id="filter_ip">
+    </div>
+
+
+    <div>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>IP Address</th>
+            <th>sqli</th>
+            <th>shell</th>
+            <th>rfi</th>
+            <th>Raw Log</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for entry in entries %}
+          <tr>
+            <td>
+              {{ entry.ip_address.address }}<br>
+              <a href="{{ url_for('log_parser.get_ip_entry', ip_address=entry.ip_address.address) }}">filter by this ip</a>
+            </td>
+            <td>{{ entry.is_sqli }}</td>
+            <td>{{ entry.is_rfi }}</td>
+            <td>{{ entry.is_web_shell }}</td>
+            <td>{{ entry.raw_log }}</td>
+          </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+    <hr>
+
+
+  </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+
+  $(function() {
+    $("#filter_ip").autocomplete({
+      source: "/ip_address_ajax/",
+      select: function (event, ui) { //item selected
+        var ip_address = ui.item.label;
+        window.location="/entry/"+ip_address;
+      },
+      minLength: 2,
+    });
+  });
+
+</script>
+{% endblock %}

@@ -1,10 +1,11 @@
+import json
 import unittest
 
 from flask_migrate import MigrateCommand
 from flask_script import Manager
 
 from app import create_app, db
-from app.log_parser.models import *
+from app.log_parser.models import IpAddress, Entry, Country
 
 app = create_app()
 manager = Manager(app)
@@ -29,13 +30,27 @@ def test():
         return 0
     return 1
 
-#
-# @manager.command
-# def seed_db():
-#     """Seeds the database."""
-#     db.session.add(User(username='michael', email="michael@realpython.com"))
-#     db.session.add(User(username='michaelherman', email="michael@mherman.org"))
-#     db.session.commit()
+
+@manager.command
+def init_db():
+    """Initialize data if db is empty"""
+
+    if not Country.query.first():
+        print('Populating Countries Data')
+        with open('countries.json') as countries_json:
+            data = json.load(countries_json)
+            for entry in data:
+                db.session.add(Country(name=entry['name'], code=entry['code']))
+                db.session.commit()
+
+    if not IpAddress.query.first():
+        print('Populating IP Address Data')
+        # example data for development only
+        country = Country.query.filter_by(code='US').first()
+        ip_address = IpAddress(address='64.233.161.99')
+        country.ip_addresses.append(ip_address)
+        db.session.add(country)
+        db.session.commit()
 
 
 if __name__ == '__main__':
