@@ -24,7 +24,7 @@ on your computer:
 ## App Installation with Docker
 Installation process:
 - clone this repo
-- from terminal, change to this root app folder
+- from terminal, change to this project root folder
 - creating docker machine: 
 ```sh
 docker-machine create -d virtualbox flask-dev
@@ -74,7 +74,8 @@ clicking on the link or search by ip address on search bar with autocomplete.
 ![](img/list_entry.png)
 
 On Upload Log File Entry menu, you can uploading log file to make an addition to the database.
-P.S please don't upload to big file for now (<20mb).
+P.S please don't upload to big file for now (<20mb). I attach log example file on this project 
+root folder for you if you wanna try to upload and see the result, the file is named `practice.log`.
 ![](img/upload_log.png)
 
 [docker-installation]: https://docs.docker.com/engine/installation/
