@@ -17,6 +17,8 @@ ADD . /usr/src/app
 CMD python manage.py db migrate
 CMD python manage.py db upgrade
 
+CMD python manage.py init_db
+
 # run server
 CMD python manage.py runserver -h 0.0.0.0
 

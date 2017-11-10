@@ -17,7 +17,7 @@ manager.add_command('db', MigrateCommand)
 def recreate_db():
     """Recreates a database."""
     db.drop_all()
-    db.create_all()
+    
     db.session.commit()
 
 
