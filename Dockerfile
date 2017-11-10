@@ -14,9 +14,10 @@ RUN pip install -r requirements.txt
 ADD . /usr/src/app
 
 # db migration
+RUN rm -rf migrations/
+CMD python manage.py db init
 CMD python manage.py db migrate
 CMD python manage.py db upgrade
-
 CMD python manage.py init_db
 
 # run server
